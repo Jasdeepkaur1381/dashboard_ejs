@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+  <h1>Dashboard</h1>
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col">Delete</th>
+        <th scope="col">ID</th>
+        <th scope="col">Client</th>
+        <th scope="col">Email</th>
+        <th scope="col">Order Date</th>
+        <th scope="col">Number of items</th>
+        <th scope="col">Total</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%detailsList.forEach(detail=> {%>
+
+        <tr>
+          <!-- <td>
+            <form action="/delete" method="post">
+              <input type="checkbox" name="checkbox" value="<%=detail._id %>" onchange="this.form.submit()">
+              <p>
+                <%=detail._id%>
+              </p>
+            </form>
+          </td> -->
+          <th scope="row">
+            <form action="/delete" method="post">
+              <input type="checkbox" name="checkbox" value="<%=detail._id %>" onchange="this.form.submit()">
+              <p>
+                <%=detail._id%>
+              </p>
+            </form>
+            <!-- <%= detail._id %> -->
+          </th>
+          <td>
+            <%= detail.client %>
+          </td>
+          <td>
+            <%= detail.email %>
+          </td>
+          <td>
+            <%= detail.orderdate %>
+          </td>
+          <td>
+            <%= detail.orderitem %>
+          </td>
+          <td>
+            <%= detail.total %>
+          </td>
+          <td>
+            <%= detail.status %>
+          </td>
+        </tr>
+
+        <%})%>
+    </tbody>
+  </table>
+</body>
+
+</html>
